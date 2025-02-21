@@ -83,7 +83,7 @@ public class PizzaTime {
         firstChars.add("Q");
         firstChars.add("U");
 
-
+        //A1A 1A1
         char firstChar = postal.charAt(0);
         boolean isChar;
         if (firstCharsNot.contains(firstChar)) {
@@ -100,9 +100,51 @@ public class PizzaTime {
             isNum = true;
             System.out.println(isNum);
         }
-        else {
-            isNum = false;
+        else isNum = false;
+
+        char third = postal.charAt(2);
+        boolean charct;
+        if (postalNum.contains(third)) {
+            charct = true;
         }
+        else charct = false;
+
+        char space = postal.charAt(3);
+        boolean charSpace;
+        if (postalNum.contains(" ")) {
+            charSpace = true;
+        }
+        else {
+            System.out.println("Please retry with a space");
+            charSpace = false;
+        }
+
+        char fourth = postal.charAt(4);
+        boolean isFourth;
+        if (postalNum.contains(fourth)){
+            isFourth = true;
+        } else isFourth = false;
+
+        char fifthChar = postal.charAt(5);
+        boolean isFifthChar,
+        if (postalNum.contains(fifthChar)) {
+            isFifthChar = true;
+        } else isFifthChar = false;
+
+        char sixthChar = postal.charAt(6);
+        boolean isSixthChar;
+        if (postalNum.contains(sixthChar)) {
+            isSixthChar = true;
+        } else isSixthChar = false;
+
+        
+
+
+        
+
+
+
+
 
 
 
