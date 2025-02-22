@@ -51,7 +51,7 @@ public class PizzaTime {
         
         //A1A 1A1
         //computers count from; 0,1,2
-        System.out.println("Postal Code?");
+        System.out.println("Postal Code? Captial Letters!");
         String postal = scanner.nextLine();
 
         ArrayList<Integer> postalNum = new ArrayList<>();   //possible postal nums, no zeros
@@ -84,60 +84,65 @@ public class PizzaTime {
         firstChars.add("U");
 
         //A1A 1A1
-        char firstChar = postal.charAt(0);
-        boolean isChar;
-        if (firstCharsNot.contains(firstChar)) {
-            isChar = false;
-        }
-        else {
-            isChar = true;
-            System.out.println(isChar);
-        }
+        boolean goodPostal;
 
-        char secChar = postal.charAt(1);
-        boolean isNum;
-        if (postalNum.contains(secChar)) {
-            isNum = true;
-            System.out.println(isNum);
-        }
-        else isNum = false;
+        while (!goodPostal) {
+            char firstChar = postal.charAt(0);
+            
+            if (firstCharsNot.contains(firstChar)) {
+                goodPostal = false;
+            }
+            else {
+                goodPostal = true;
+    
+            }
 
-        char third = postal.charAt(2);
-        boolean charct;
-        if (postalNum.contains(third)) {
-            charct = true;
-        }
-        else charct = false;
+            char secChar = postal.charAt(1);
+            
+            if (postalNum.contains(secChar)) {
+                goodPostal = true;
+                
+            }
+            else goodPostal = false;
 
-        char space = postal.charAt(3);
-        boolean charSpace;
-        if (postalNum.contains(" ")) {
+            char third = postal.charAt(2);
+            boolean charct;
+            if (postalNum.contains(third)) {
+                charct = true;
+            }
+            else charct = false;
+
+            char space = postal.charAt(3);
+            boolean charSpace;
+            if (postalNum.contains(" ")) {
             charSpace = true;
-        }
-        else {
+            }
+            else {
             System.out.println("Please retry with a space");
             charSpace = false;
+            }
+
+            char fourth = postal.charAt(4);
+            boolean isFourth;
+            if (postalNum.contains(fourth)){
+                isFourth = true;
+            } else isFourth = false;
+
+            char fifthChar = postal.charAt(5);
+            boolean isFifthChar,
+            if (postalNum.contains(fifthChar)) {
+                isFifthChar = true;
+            } else isFifthChar = false;
+
+            char sixthChar = postal.charAt(6);
+            boolean isSixthChar;
+            if (postalNum.contains(sixthChar)) {
+                isSixthChar = true;
+            } else isSixthChar = false;
         }
-
-        char fourth = postal.charAt(4);
-        boolean isFourth;
-        if (postalNum.contains(fourth)){
-            isFourth = true;
-        } else isFourth = false;
-
-        char fifthChar = postal.charAt(5);
-        boolean isFifthChar,
-        if (postalNum.contains(fifthChar)) {
-            isFifthChar = true;
-        } else isFifthChar = false;
-
-        char sixthChar = postal.charAt(6);
-        boolean isSixthChar;
-        if (postalNum.contains(sixthChar)) {
-            isSixthChar = true;
-        } else isSixthChar = false;
-
         
+
+
 
 
         
