@@ -25,7 +25,7 @@ public class PizzaTime {
                 isValid = true;
             }
             else {
-                System.out.println("Invalid Street Name. Pleae Try Again");
+                System.out.println("We do not deliver to this street, try again");
             }
         }
 
@@ -35,19 +35,17 @@ public class PizzaTime {
 
 
         String must = "Winnipeg";
-        boolean validCity = false;
 
-         while (!validCity ) {
-            System.out.println("City Name?");
-            String city = scanner.nextLine();
+        System.out.println("City Name?");
+        String city = scanner.nextLine();
 
-            if (city.equals(must)) {
-                validCity = true;
-            }
-            else {
-                System.out.println("Please enter another valid city");
-            }
+        if (city.equals(city) == false) {
+            System.out.println("We do not deliver in city, please enter another valid city");
+            
         }
+        
+        
+            
         
         //A1A 1A1
         //computers count from 0,1,2
@@ -83,75 +81,108 @@ public class PizzaTime {
         //A1A 1A1
         boolean goodPostal = false;
 
-        while (goodPostal == true) {
-            System.out.println("Postal Code? Captial Letters");
-            String postal = scanner.nextLine();
+        // while (!goodPostal) {
+        //     System.out.println("Postal Code?");
+        //     String postal = scanner.nextLine();
+            
+        //     postal = postal.toUpperCase();
+            
+        //     char first = postal.charAt(0);
+        //     if (firstCharsNot.contains(first)) {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     }
+        //     else if (postalNum.contains(first)){
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     } else goodPostal = true;
 
-            char first = postal.charAt(0);
-            if (firstCharsNot.contains(first)) {
-                goodPostal = false;
-            }
-            else {
-                goodPostal = true;
-            }
+        //     char sec = postal.charAt(1);
+        //     if (postalNum.contains(sec)) {
+        //         goodPostal = true;
+        //     }
+        //     else if (firstChars.contains(sec)) {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     } else goodPostal = true;
 
-            char sec = postal.charAt(1);
-            if (postalNum.contains(sec)) {
-                goodPostal = true;
-            }
-            else goodPostal = false;
+        //     char third = postal.charAt(2);
+        //     if (firstChars.contains(third)) {
+        //         goodPostal = true;
+        //     } else if (postalNum.contains(third)) {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     } else{ 
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     } 
+           
 
-            char third = postal.charAt(2);
-            boolean charct;
-            if (firstChars.contains(third)) {
-                charct = true;
-            }
-            else charct = false;
-
-            char between = postal.charAt(3);
-            boolean isSpace = Character.isSpaceChar(between);
-            if (isSpace = false) {
-                System.out.println("Please add a space in between");
-                goodPostal = false;
-            } else goodPostal = true;
+        //     char between = postal.charAt(3);
+        //     boolean isSpace = Character.isSpaceChar(between);
+        //     if (isSpace = false) {
+        //         System.out.println("Please add a space in between");
+        //         goodPostal = false;
+        //     } else goodPostal = true;
 
             
-            char fourth = postal.charAt(4);
-            boolean isFourth;
-            if (postalNum.contains(fourth)){
-                isFourth = true;
-            } else isFourth = false;
+        //     char fourth = postal.charAt(4);
+        //     if (postalNum.contains(fourth)){
+        //         goodPostal = true;
+        //     } else {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     }
 
-            char fifth = postal.charAt(5);
-            boolean isFifthChar;
-            if (firstChars.contains(fifth)) {
-                isFifthChar = true;
-            } else isFifthChar = false;
+        //     char fifth = postal.charAt(5);
+        //     if (firstChars.contains(fifth)) {
+        //         goodPostal = true;
+        //     } else {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     }
 
-            char sixthChar = postal.charAt(6);
-            boolean isSixthChar;
-            if (postalNum.contains(sixthChar)) {
-                isSixthChar = true;
-            } else isSixthChar = false;
+        //     char sixthChar = postal.charAt(6);
+        //     if (postalNum.contains(sixthChar)) {
+        //         goodPostal = true;
+        //     } else {
+        //         goodPostal = false;
+        //         System.out.println("Invalid postal code");
+        //     }
+    
+        // }
+        System.out.println("Order Customization");
+        System.out.println("Small (10 inches), Medium (14 inches), or Large Pizza (16 inches)?");
+        
+        String pizChoice = scanner.nextLine();
+        pizChoice.toUpperCase();
+
+        while(pizChoice !="SMALL" || pizChoice != "MEDUIM" || pizChoice != "LARGE"){
+            System.out.println("Invalid choice.");
+            pizChoice = scanner.nextLine();
+            pizChoice.toUpperCase();
         }
         
-
-
-
-
         
 
+        switch (pizChoice) {
+            case "SMALL":
+                double small = 1 * 10;
+                break;
 
+            case "MEDIUM":
+                double medium = 1 * 12;
+                break;
 
-
-
-
-
+            case "LARGE":
+                double large = 1 * 15;
+                break;
         
+            default:
+                break;
+        }
 
 
-
-            
     }
         
 
