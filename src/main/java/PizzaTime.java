@@ -6,46 +6,64 @@ public class PizzaTime {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Pizza Time!");
-
-        ArrayList<String> streetNames = new ArrayList<>();
-        streetNames.add("Burrows");
-        streetNames.add("Main");
-        streetNames.add("Henderson");
-        streetNames.add("Magnus");
-        streetNames.add("Mountain");
+        System.out.println("---Pizza Time!---");
+        System.out.println("Street Name?");
         
-        boolean isValid = false;
+        String street = scanner.nextLine();
+        street.toUpperCase().trim();
 
-        while (!isValid) {
-            System.out.println("Street Name?");
-            String street = scanner.nextLine();
+        boolean input = false;
+        do {
+            switch (street.toUpperCase().trim()) {
+                case "BURROWS":
+                input = true;
+                break;
 
-            if (streetNames.contains(street)) {
-                isValid = true;
+                case "MAIN":
+                input = true;
+                break;
+
+                case "HENDERSON":
+                input = true;
+                break;
+
+                case "MAGNUS":
+                input = true;
+                break;
+
+                case "MOUNTAIN":
+                input = true;
+                break;
+
+                default: 
+                System.out.println("We don't deliver to this street, try again.");
+                street = scanner.nextLine();
+                input = false;
+                break;
+                
             }
-            else {
-                System.out.println("We do not deliver to this street, try again");
-            }
-        }
+        } while (!input);
 
-
+    
         System.out.println("Street Number?");
         int streetNum = scanner.nextInt();
 
+            
+        System.out.println("Enter City");
+        String city = scanner.nextLine().toUpperCase().trim();
 
-        String must = "Winnipeg";
-
-        System.out.println("City Name?");
-        String city = scanner.nextLine();
-
-        if (city.equals(city) == false) {
-            System.out.println("We do not deliver in city, please enter another valid city");
+        switch (city) {
+            case "WINNIPEG":
+            System.out.println("Valid City");
+            break;
+        
+            default:
+            System.out.println("error");
+            city = scanner.nextLine().toUpperCase().trim();
             
         }
         
         
-            
         
         //A1A 1A1
         //computers count from 0,1,2
@@ -152,36 +170,56 @@ public class PizzaTime {
     
         // }
         System.out.println("Order Customization");
-        System.out.println("Small (10 inches), Medium (14 inches), or Large Pizza (16 inches)?");
-        
-        String pizChoice = scanner.nextLine();
-        pizChoice.toUpperCase();
+        System.out.println("1: Small (10 inches) \n2: Medium (14 inches) \n3: Large Pizza (16 inches)");
+        int pizChoice = scanner.nextInt();
 
-        while(pizChoice !="SMALL" || pizChoice != "MEDUIM" || pizChoice != "LARGE"){
-            System.out.println("Invalid choice.");
-            pizChoice = scanner.nextLine();
-            pizChoice.toUpperCase();
-        }
+        //while(pizChoice != "SMALL" || pizChoice != "MEDUIM" || pizChoice != "LARGE"){
+           // System.out.println("Invalid choice.");
+            //pizChoice = scanner.nextLine();
+            //pizChoice.toUpperCase();
+       // }
         
-        
-
         switch (pizChoice) {
-            case "SMALL":
-                double small = 1 * 10;
-                break;
+            case 1:
+            double small = 10;
 
-            case "MEDIUM":
-                double medium = 1 * 12;
-                break;
+            case 2:
+            double medium = 12;
+                
 
-            case "LARGE":
-                double large = 1 * 15;
-                break;
+            case 3:
+            double large = 15;
+                
         
             default:
-                break;
+                System.out.println("Invalid Choice. Try Again");
+                pizChoice = scanner.nextInt();
         }
+        
+        System.out.println("Toppings");
+        System.out.println("1: Pepperonis \n2: Bacon \n3: Ham \n4: Pineapples");
+        int topChoice = scanner.nextInt();
+        switch (topChoice) {
+            case 1:
+            double pepps = 3.50;
+            break;
+            
+            case 2:
+            double bacon = 4.00;
+            break;
 
+            case 3:
+            double ham = 4.50;
+            break;
+
+            case 4:
+            double pines = 5.00;
+            break;
+
+            default:
+            System.out.println("Invalid Choice. Try Again");
+            topChoice = scanner.nextInt();
+        }
 
     }
         
